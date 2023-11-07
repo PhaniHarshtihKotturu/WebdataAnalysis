@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload with Dropzone</title>
+    <!-- Include Dropzone CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dropzone/dist/min/dropzone.min.css">
+    
+    <script>
+        // Dropzone configuration
+        Dropzone.options.myDropzone = {
+            acceptedFiles: ".csv, .xlsx, .json", // Restrict accepted file types
+            maxFilesize: 3, // in megabytes
+            maxFiles: 1, // Limit the number of files
+            init: function () {
+                this.on("complete", function (file) {
+                    // Handle file upload completion if needed
+                });
+            }
+        };
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            width: 50px; /* Adjust the width of the logo */
+            margin-right: 10px;
+        }
+
+        .dropzone {
+            border: 2px dashed #0087F7;
+            border-radius: 10px;
+            background-color: #f4f4f4;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="header">
+        <div class="logo">
+            <img src="C:\prj1\templates\STAT_FLOW.png" alt="Logo">
+            <h1>File Upload App</h1>
+        </div>
+    </div>
+
+    <div class="dropzone-container">
+        <h2>Upload Files</h2>
+        <!-- Dropzone component -->
+        <form action="/upload" method="POST" class="dropzone" id="my-dropzone">
+            <div class="fallback">
+                <input name="file" type="file" multiple />
+            </div>
+        </form>
+    </div>
+    <p style="text-align: center; margin-top: 10px;">Only .xlsx, .csv, and .json files allowed</p>
+    <br>
+    <h3>Dataframes Display</h3>
+   
+
+    <!-- Include Dropzone JS -->
+    <script src="https://cdn.jsdelivr.net/npm/dropzone/dist/min/dropzone.min.js"></script>
+     <!-- Include React and ReactDOM from CDN -->
+     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+ </body>
+
+</html>
